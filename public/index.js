@@ -1,4 +1,4 @@
-const API_KEY = "98818c993a877b3be3c1bf3edd6faad1";
+
 
 const weatherMap = {
   "Clear": "Maaraw",
@@ -114,9 +114,9 @@ const weatherIcons = {
 const weatherSets = {
   "Clear": {
     images: [
-      "bgdelete/sunny.png",
-      "bgdelete/washing.png",
-      "bgdelete/tuning.png"
+      "Images/sunny.png",
+      "Images/washing.png",
+      "Images/tuning.png"
     ],
     texts: [
       "Maganda ang araw, tara mag-rides 🚴‍♂️",
@@ -133,7 +133,7 @@ const weatherSets = {
   },
 
   "Clouds": {
-    images: ["bgdelete/cloudy.png"],
+    images: ["Images/cloudy.png"],
     texts: [
       "Maulap, pero pwede pa rin mag ride.",
       "Sakto lang ang lamig, chill ride muna.",
@@ -150,8 +150,8 @@ const weatherSets = {
 
   "Rain": {
     images: [
-      "bgdelete/lightrain.png",
-      "bgdelete/raining.png"
+      "Images/lightrain.png",
+      "Images/raining.png"
     ],
     texts: [
       "Umuulan na naman, pahinga muna.",
@@ -168,7 +168,7 @@ const weatherSets = {
   },
 
   "Thunderstorm": {
-    images: ["bgdelete/thunder.png"],
+    images: ["Images/thunder.png"],
     texts: [
       "Bumabagyo, stay sa loob ng bahay!",
       "Malakas ang ulan at hangin — wag na!",
@@ -190,8 +190,8 @@ let slideInterval;
 async function getWeatherByCoords(lat, lon) {
   try {
     const res = await fetch(
-      `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`
-    );
+  `/api/weather?lat=${lat}&lon=${lon}`
+);
     const data = await res.json();
 
     const cityName = data.city.name;
@@ -215,8 +215,9 @@ async function getWeatherByCoords(lat, lon) {
 async function getWeatherByCity(city) {
   try {
     const res = await fetch(
-      `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${API_KEY}`
-    );
+  `/api/weather?city=${city}`
+);
+
     const data = await res.json();
 
     const cityName = data.city.name;
@@ -237,7 +238,6 @@ async function getWeatherByCity(city) {
   }
 }
 
-// Main function
 async function getWeather() {
   try {
     const { lat, lon } = await getUserLocation();
@@ -245,7 +245,7 @@ async function getWeather() {
   } catch (err) {
     console.warn("Geolocation failed:", err);
     alert("Cannot access location. Showing default city weather.");
-      await getWeatherByCity("beijing"); 
+      await getWeatherByCity("Manila"); 
       
   }
 }
@@ -254,7 +254,7 @@ async function getWeather() {
 
 
 function startWeatherSlideshow(weatherMain) {
-  const set = weatherSets[weatherMain] || {images: ["bgdelete/sunny.png"], texts: ["Loading..."]};
+  const set = weatherSets[weatherMain] || {images: ["Images/sunny.png"], texts: ["Loading..."]};
   const iconEl = document.getElementById("weather-icon");
   const textEl = document.getElementById("ride-text");
 

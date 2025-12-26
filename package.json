@@ -1,7 +1,17 @@
 {
+  "name": "magbibike-ba",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node server/server.js"
+  },
   "dependencies": {
-    "@tailwindcss/cli": "^4.1.18",
-    "dotenv": "^17.2.3",
-    "tailwindcss": "^4.1.18"
-  }
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.2",
+    "dotenv": "^16.3.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

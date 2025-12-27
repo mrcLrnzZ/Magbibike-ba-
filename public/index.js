@@ -328,7 +328,7 @@ function renderHourly(list) {
     const description = weatherMap[mainWeather] || mainWeather;
 
     hourly.innerHTML += `
-      <div class="bg-white rounded-xl shadow-xl p-6 min-w-32 flex flex-col items-center">
+      <div class="bg-white rounded-xl shadow-xl p-6 min-w-37.5 shrink-0 flex flex-col items-center">
         ${weatherIcons[mainWeather] || `<p>❓</p>`}
         <p class="text-sm text-gray-500 mt-2">${time}</p>
         <p class="text-lg font-medium">${description}</p>
@@ -362,7 +362,7 @@ function renderDaily(list) {
     const description = weatherMap[mainWeather] || mainWeather;
 
     daily.innerHTML += `
-      <div class="bg-white rounded-xl shadow-xl p-6 min-w-32 flex flex-col items-center">
+      <div class="bg-white rounded-xl shadow-xl p-6 min-w-37.5 shrink-0 flex flex-col items-center">
         ${weatherIcons[mainWeather] || `<p>❓</p>`}
         <p class="text-sm text-gray-500 mt-2">${dayName}</p>
         <p class="text-lg font-medium">${description}</p>

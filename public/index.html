@@ -3,35 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-    <link href="./src/output.css" rel="stylesheet">
-    <script src="index.js"></script>
+  <title>Magbibike Ba?</title>
+  <link href="./src/output.css" rel="stylesheet">
+  <script src="index.js" defer></script>
 </head>
 
-<body class="min-h-screen flex flex-col items-center mt-10">
+<body class="min-h-screen flex flex-col items-center px-4 sm:px-8 py-6 bg-gray-50">
 
-  <h1 id="city" class="text-3xl font-bold mt-3.5"> Loading...</h1>
-  <p id="current-weather" class="text-gray-600 mb-4">Loading...</p>
+  <h1 id="city" class="text-2xl sm:text-3xl md:text-4xl font-bold mt-3 mb-1 text-center">Loading...</h1>
+  <p id="current-weather" class="text-sm sm:text-base md:text-2xl text-gray-600 mb-4 text-center">Loading...</p>
 
-<img id="weather-icon" src="../Images/sunny.png" alt="Weather icon" class="w-70 m-10">
+  <img id="weather-icon" src="images/sunny.png" alt="Weather icon" 
+       class="w-36 sm:w-48 md:w-64 m-4">
 
-<h1 id="ride-text" class="text-2xl">Loading...</h1>
+  <h1 id="ride-text" class="text-lg sm:text-xl md:text-2xl text-center mb-10">Loading...</h1>
 
-    <h1 class="text-2xl mt-14 text-gray-400">Mga oras sa araw</h1>
+  <h1 class="text-lg sm:text-xl md:text-2xl mt-10 text-gray-400 text-center">Mga oras sa araw</h1>
+  <div id="hourly" class="flex gap-4 mt-6 w-full overflow-x-auto px-2 py-2 items-center md:justify-center"></div>
 
-
-    <div id="hourly" class="flex gap-4 mt-6 w-full px-4 justify-center">
-
-   
-</div>
-
-    <h1  class="text-2xl mt-14 text-gray-400">Araw ng Linggo</h1>
-
-    <div id="daily" class="flex gap-4 mt-6 w-full px-4 justify-center">
-
-
-</div>
-
+  <h1 class="text-lg sm:text-xl md:text-2xl mt-10 text-gray-400 text-center">Araw ng Linggo</h1>
+  <div id="daily"  class="flex gap-4 mt-6 w-full overflow-x-auto px-2 py-2 items-center md:justify-center"></div>
 
 </body>
 </html>
